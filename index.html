@@ -1,88 +1,62 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>To-Do App</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="style.css">
-	<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-	<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
-	<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-</head>
+	<!DOCTYPE html>
+	<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>To-Do App</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+		<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+		<link rel="stylesheet" type="text/css" href="style.css">
+	</head>
 
-<body>
-	<nav class="navbar navbar-default navbar-inverse">
-		<div class="container-fluid">
-			<div class="navbar-header navbar-center">
-				<a class="navbar-brand" href="#">To-Do App</a>
+	<body>
+		<nav class="navbar navbar-default navbar-inverse">
+			<div class="container-fluid">
+				<div class="navbar-header navbar-center">
+					<a class="navbar-brand" href="#">To-Do App</a>
+				</div>
+			</div>
+		</nav>
+
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3 left">
+					<ul class="nav nav-pills">
+						<li role="presentation"><a href="#" class="uncomplete">Uncompleted Tasks</a></li><hr>
+					</ul>
+				</div>
+				<div class="col-md-3">
+					<ul class="nav nav-pills">
+						<li role="presentation"><a href="#" class="now">Tasks in Progress</a></li><hr>
+					</ul>
+					<ul id="sortable1" class="connectedSortable taskList">
+						<p class="task"></p>
+						
+						
+					</ul>
+				</div>
+				<div class="col-md-3">
+					<ul class="nav nav-pills">
+						<li role="presentation"><a href="#" class="complete">Completed Tasks</a></li><hr>
+					</ul>
+				</div>
+				<div class="col-md-3 partition">
+					<h2>New Task</h2>
+					<p id="profile-name" class="profile-name-card"></p>
+					<form class="form-signin" id="taskEntryForm">
+						<span id="reauth" class="reauth"></span>
+						<input type="text" id="title" class="form-control" placeholder="I need to ..." autofocus required>
+						<input type="text" id="start" class="form-control datepicker" placeholder="Start Date" required>
+						<input type="text" id="end" class="form-control datepicker" placeholder="End Date" required>
+						<button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Create Task</button>
+					</form>
+				</div>
+
 			</div>
 		</div>
-	</nav>
-
-	<div class="container">
-		<div class="row">
-			<div class="col-md-3 left">
-				<ul class="nav nav-pills">
-					<li role="presentation"><a href="#">Uncompleted Tasks</a></li><hr>
-				</ul>
-			</div>
-			<div class="col-md-3">
-				<ul class="nav nav-pills">
-					<li role="presentation"><a href="#">Tasks in Progress</a></li><hr>
-				</ul>
-			</div>
-			<div class="col-md-3">
-				<ul class="nav nav-pills">
-					<li role="presentation"><a href="#">Completed Tasks</a></li><hr>
-				</ul>
-			</div>
-			<div class="col-md-3 partition">
-				<h2>New Task</h2>
-				<p id="profile-name" class="profile-name-card"></p>
-				<form class="form-signin">
-					<span id="reauth" class="reauth"></span>
-					<input type="text" id="title" class="form-control" placeholder="Title" autofocus required>
-					<input type="text" id="from" name="from" class="form-control" placeholder="Start Date" required>
-					<input type="text" id="to" name="to" class="form-control" placeholder="End Date" required>
-					<div class='input-group date' id='datetimepicker1'>
-                    <input type='text' class="form-control" />
-                    <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                    </span>
-                </div>
-					<button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Create Task</button>
-				</form>
-			</div>
-			
-		</div>
-	</div>
-</body>
-
-<script type="text/javascript">
-$( document ).ready(function() {
-    // Date picker
-    $( "#from" ).datepicker({
-    	defaultDate: "+1w",
-    	changeMonth: true,
-    	numberOfMonths: 1,
-    	onClose: function( selectedDate ) {
-    		$( "#to" ).datepicker( "option", "minDate", selectedDate );
-    	}
-    });
-    $( "#to" ).datepicker({
-    	defaultDate: "+1w",
-    	changeMonth: true,
-    	numberOfMonths: 1,
-    	onClose: function( selectedDate ) {
-    		$( "#from" ).datepicker( "option", "maxDate", selectedDate );
-    	}
-    }); 
-
-    //
-  });
-
-</script>
-</html>
+		<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+		<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+		<script src="main.js"></script>
+	</body>
+	</html>
 

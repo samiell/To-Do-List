@@ -1,3 +1,18 @@
+.uncomplete{
+    color: rgb(192, 57, 43);
+    font-weight: 700;
+}
+
+.now {
+    color: #e67e22;
+    font-weight: 700;
+}
+
+.complete {
+    color: #16a085;
+    font-weight: 700;
+}
+
 body {
 	background-color: rgba(0, 0, 0, 0.3);
 }
@@ -6,14 +21,27 @@ h2 {
 	font-weight: bold;
 	color: #16a085;
 }
+#sortable1  li {
+    background-color: rgba(230, 126, 34, 0.2);
+    height: 48px;
+    width: 250px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    margin-left: -145px;
+    line-height: 48px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
 
 .partition {
 	border-left: 2px solid #efefef;
-	margin-left: 0px;
+    padding-left: -10px;
 }
 
 .col-md-3 {
-	padding-left: 50px;
+	padding-left: auto;
+    padding-right: auto;
 	margin-top: -10px;
 	-moz-border-radius: 3px;
     -webkit-border-radius: 2px;
@@ -24,10 +52,6 @@ h2 {
 }
 
 
-.col-md-4 {
-	font-size: 20px;
-	margin-left: 0px;
-}
 
 .nav-pills {
 	font-size: 20px;
@@ -110,3 +134,12 @@ a.navbar-brand {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
+
+.taskList {
+    width: 26px;
+    margin:auto;
+    font-size:19px;
+    font-weight:600;
+}
+
+ 
